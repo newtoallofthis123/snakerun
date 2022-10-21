@@ -1,0 +1,46 @@
+::-moz-selection { /* Code for Firefox */
+  color: #ECECF2;
+  background: #1A15F0;
+}
+
+::selection {
+  color: #ECECF2;
+  background: #1A15F0;
+}
+
+#body{
+    --main_bg: #f0f0f0;
+    --nav_bg: #212121;
+    --primary_color: #212121;
+    --secondary_color: #212121;
+    --nav_secondary_color: #f0f0f0;
+    --link_color: #2835f1;
+    --link_hover_color: #202ef0;
+    background-color: var(--main_bg);
+    --bs-body-color: #212121;
+    --bs-body-font-family: 'Poppins', sans-serif;
+    overscroll-behavior: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=Gluten&family=JetBrains+Mono:ital,wght@1,600&family=Josefin+Sans&family=Karla&family=Noto+Sans+Mono&family=Oxygen+Mono&family=Permanent+Marker&family=Noto+Sans&family=Ubuntu&display=swap');
+
+.CodeMirror * {
+    font-family: 'Oxygen Mono', 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+.nav_title {
+    font-size: 1.8rem;
+    font-family: 'Noto Sans Mono', 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#save{
+    background-color: #8c5aff;
+    color: #e9e9ea;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}

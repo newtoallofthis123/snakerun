@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SnakeRun Terminal Console</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='term.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<nav>
+    <h1 class="nav_title">🐍 SnakeRun Terminal Console</h1>
+</nav>
+<body>
+    <div class="cmd_div">
+        <input type="text" class="cmd_input">
+        <button type="submit" id="exec">Run</button>
+    </div>
+    <div class="output_div">
+        
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $("#exec").click(function(){
+            $.ajax({
+                type: "GET",
+                url: "/exec",
+                dataType: "json",
+                data: { "cmd": $(".cmd_input").val() },
+                success: function (response) {
+                    $(".output_div").html("<h1 class='term_title'>Showing Results for command {<span class='term_highlight'>" + $(".cmd_input").val() + "</span>}</h1><p>" + response + "</p>" + "<h2 style='text-align: center; font-family: Courier, monospace; font-size: 0.6rem;'>If you see nothing here, your terminal is displaying styled text or a prompt that html can't render.</h2>");
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SnakeRun Editing in {{ language }}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='master.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<nav>
+    <h1 class="nav_title">🐍 SnakeRun Editor v.0.1</h1>
+</nav>
+
+<body>
+    <div id="canvas">
+        <textarea name="three_dots" id="three_dots" cols="1" rows="1"
+            class="textarea"> 🔴🟢🟡 SnakeRun Editor v.0.1</textarea>
+        <textarea name="content" id="content" cols="30" rows="10" spellcheck="true" placeholder="Start Typing..."
+            autofocus="true"></textarea>
+    </div>
+    <div style="text-align: center;">
+        <p style="font-family: 'Courier New', Courier, monospace; font-size: 1rem;">This is only a editor. To actually write and save a file, use {<span style="color: rgb(8, 0, 255);">snakerun write filename</span>}</p>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/edit/closebrackets.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/comment/comment.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/xml/xml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/edit/matchtags.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/fold/xml-fold.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/edit/closetag.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/display/fullscreen.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/display/fullscreen.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/selection/active-line.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/display/placeholder.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/{{ language }}/{{ language }}.js"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='monokai.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/keymap/sublime.js"></script>
+<script>
+    const codemirrorEditor = CodeMirror.fromTextArea(document.getElementById('content'), {
+        lineNumbers: true,
+        mode: "{{ language }}",
+        theme: "monokai",
+        keymap: "sublime",
+        autoCloseBrackets: true,
+        matchTags: {bothTags: true},
+        extraKeys: {
+            "Ctrl-J": "toMatchingTag",
+            "Ctrl-/": "toggleComment",
+            "F11": function(cm) {
+                cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+            },
+            "Esc": function(cm) {
+                if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+            }
+        },
+        autoCloseTags: true,
+        // styleActiveLine: true,
+        smartIndent: true,
+        cursorBlinkRate: 0,
+        cursorHeight: 1,
+        viewportMargin: Infinity,
+    });
+    codemirrorEditor.setSize("100%", "32vw");
+    const three_dots = CodeMirror.fromTextArea(document.getElementById('three_dots'), {
+        theme: "monokai",
+        readOnly: true,
+        cursorBlinkRate: 0,
+        cursorHeight: 0,
+        viewportMargin: Infinity,
+    });
+    three_dots.setSize("100%", "50%");
+</script>
+
+</html>

@@ -1,0 +1,16 @@
+{
+  "file_stuff" : {
+    ".py": "python",
+    ".js": "javascript",
+    ".xml": "xml",
+    ".html": "html",
+    ".css": "css",
+    ".jsx": "js",
+    ".txt": "txt",
+    ".htmlx": "html",
+    ".rb": "ruby",
+    ".cpp"  : "cpp",
+    ".java" : "java",
+    ".json": "json"
+  }
+}
