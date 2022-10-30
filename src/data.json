@@ -11,6 +11,7 @@
     ".rb": "ruby",
     ".cpp"  : "cpp",
     ".java" : "java",
-    ".json": "json"
+    ".json": "json",
+    ".md": "markdown"
   }
 }
