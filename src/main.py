@@ -77,6 +77,10 @@ def run(filename):
     except:
         print('Something went wrong')
 
+def upload(filename):
+    import os
+    from rich.console import Console
+    filename = f'{os.getcwd()}\{filename}'
 
 def copy(filename):
     import pyperclip

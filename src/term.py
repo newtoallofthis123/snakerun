@@ -18,6 +18,3 @@ class Term:
         import webbrowser
         webbrowser.open(f'http://localhost:5000/')
         app.run(debug=False)
-
-
-print("Hello World")
