@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Libre+Baskerville&family=Lilita+One&family=Major+Mono+Display&family=Montserrat:wght@100;400&family=Poppins&family=Raleway&family=Roboto+Condensed:wght@700&display=swap');
+
+body{
+    margin: 0px;
+}
+
+nav h1{
+    font-family: 'Major Mono Display', 'Courier New', Courier, monospace;
+    font-size: 5vw;
+    margin: 0px;
+    text-align: center;
+}
+
+.main{
+    margin: 10%;
+    margin-top: 2%;
+}
+
+.main p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+}
