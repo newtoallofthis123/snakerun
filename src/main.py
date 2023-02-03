@@ -82,6 +82,15 @@ def upload(filename):
     from rich.console import Console
     filename = f'{os.getcwd()}\{filename}'
 
+def md(filename):
+    import os
+    from rich.console import Console
+    from md import Md
+    # filename = f'{os.getcwd()}\{filename}'s
+    md = Md(f'{filename}')
+    Console().print(f'Running Server for editing {filename}')
+    md.up()
+
 def copy(filename):
     import pyperclip
     from rich.console import Console
