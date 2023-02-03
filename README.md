@@ -18,6 +18,8 @@ A complete set of run and edit tools for python for leaners and pro's alike.
 
 7. DELETE: Delete your file without any headache
 
+8. MD: Use [HTMLER](https://htmler.noobscience.rocks) Markdown Editor
+
 ## ✅Plans
 
 - [x] Markdown Editor
