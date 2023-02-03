@@ -20,7 +20,7 @@ A complete set of run and edit tools for python for leaners and pro's alike.
 
 ## ✅Plans
 
-- [-] Markdown Editor
+- [x] Markdown Editor
 
 - [ ] Add Run Support for other languages
 
