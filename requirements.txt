@@ -1,4 +1,0 @@
-rich
-fire
-pyperclip
-flask
