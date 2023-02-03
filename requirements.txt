@@ -1,3 +1,4 @@
 rich
 fire
 pyperclip
+flask
